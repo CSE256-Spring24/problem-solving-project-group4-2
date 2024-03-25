@@ -11,14 +11,14 @@ perm_dialog = define_new_dialog('permdialog', title='Permissions', options = {
     width: 400,
     buttons: {
         OK:{
-            text: "OK",
+            text: "SAVE",
             id: "perm-dialog-ok-button",
             click: function() {
                 $( this ).dialog( "close" );
             }
         },
         Advanced: {
-            text: "Advanced",
+            text: "Advanced Permissions",
             id: "perm-dialog-advanced-button",
             click: function() {
                 open_advanced_dialog(perm_dialog.attr('filepath'))
@@ -29,7 +29,7 @@ perm_dialog = define_new_dialog('permdialog', title='Permissions', options = {
 
 // Make the initial "Object Name:" text:
 // If you pass in valid HTML to $(), it will *create* elements instead of selecting them. (You still have to append them, though)
-obj_name_div = $('<div id="permdialog_objname" class="section">Object Name: <span id="permdialog_objname_namespan"></span> </div>')
+obj_name_div = $('<div id="permdialog_objname" class="section"><b>File Path:</b><span id="permdialog_objname_namespan"></span> </div>')
 
 //Make the div with the explanation about special permissions/advanced settings:
 advanced_expl_div = $('<div id="permdialog_advanced_explantion_text">For special permissions or advanced settings, click Advanced.</div>')
