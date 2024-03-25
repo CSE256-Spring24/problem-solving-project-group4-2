@@ -10,21 +10,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="fileperms_style.css" />
+    <title>Understanding File Permissions and Inheritance</title>
 
 </head>
 
-
+<!-- Manually cut down the document, then had chatGPT write it in html style -->
 <body>
-
-    In each scenario, you will see a simplified file system management interface. <br />
-    Pretend that you are an administrator for this file system, and you are tasked with maintaining correct file
-    permissions. <br />
-    Complete the task given in each scenario. <br />
-    <hr>
-    <h1>Guides:</h1>
-    <a href="index.html?tag=permissions_summary">Permissions:</a> <br />
-    <a href="index.html?tag=navigation_summary">Navigation:</a>
-
-</body>
+    <h2>Inheritance:</h2>
+    <p>Files and folders can inherit permissions from their parent folders by default. Inheritance means that permissions set on a parent folder are automatically applied to its subfolders and files.</p>
+  
+    <h2>Fixing Permissions Issues:</h2>
+    <p>When a user attempts an action on a file, Windows checks the permissions according to a specific algorithm:
+      <ul>
+        <li>Direct permissions take precedence over inherited permissions.</li>
+        <li>Inherited permissions closer to the file have precedence over those further away.</li>
+        <li>"Deny" permissions override "allow" permissions at the same level.</li>
+        <li>If no explicit permissions are found for the user and action combination, and inheritance is enabled, Windows looks to the parent folder for permissions.</li>
+      </ul>
+    </p>
+  </body>
 
 </html>
