@@ -1,27 +1,45 @@
 // ---- Define your dialogs  and panels here ----
-// ---- Define your dialogs  and panels here ----
-var permission_panel = define_new_effective_permissions('permission_panel', add_info_col=true)
-$('#sidepanel').append(permission_panel)
+// $('#sidepanel').append('<h2>View the Detailed Permissions for a File/Folder for a User')
+// var permission_panel = define_new_effective_permissions('permission_panel', add_info_col=true)
+// $('#sidepanel').append(permission_panel)
 
-var user_selector = define_new_user_select_field('user_selector', 'User Selector', function(selected_user) {
-    $('#permission_panel').attr('username', selected_user)
-    $('#permission_panel').attr('filepath', '/C/presentation_documents/important_file.txt') 
- })
-$('#sidepanel').append(user_selector)
+// var user_selector = define_new_user_select_field('user_selector', 'User Selector', function(selected_user) {
+//     $('#permission_panel').attr('username', selected_user)
+//     $('#permission_panel').attr('filepath', '/C/presentation_documents/important_file.txt') 
+//  })
+// $('#sidepanel').append(user_selector)
 
-var blank_dialog = define_new_dialog('blank_dialog', 'Blank Dialog')
-$('.perm_info').click(function(){
-    blank_dialog.dialog('open')
-    console.log($('#permission_panel').attr('filepath'))
-    console.log($('#permission_panel').attr('username'))
-    console.log($($(this)).attr('permission_name'))
+// var blank_dialog = define_new_dialog('blank_dialog', 'Blank Dialog')
+// $('.perm_info').click(function(){
+//     blank_dialog.dialog('open')
+//     console.log($('#permission_panel').attr('filepath'))
+//     console.log($('#permission_panel').attr('username'))
+//     console.log($($(this)).attr('permission_name'))
 
-    filepath_obj = path_to_file[$('#permission_panel').attr('filepath')]
-    user_obj = all_users[$('#permission_panel').attr('username')]
+//     filepath_obj = path_to_file[$('#permission_panel').attr('filepath')]
+//     user_obj = all_users[$('#permission_panel').attr('username')]
 
-    var explanation = get_explanation_text(allow_user_action(filepath_obj, user_obj, $(this).attr('permission_name')))
-    blank_dialog.text(explanation)
-})
+//     var explanation = get_explanation_text(allow_user_action(filepath_obj, user_obj, $(this).attr('permission_name')))
+//     blank_dialog.text(explanation)
+// })
+
+function get_file_path(file_obj, file_paths = []) {
+    var file_path = get_full_path(file_obj)
+    file_paths.push( file_path )  
+
+    if( file_path in parent_to_children) {
+        for(child_file of parent_to_children[file_path]) {
+            get_file_path(child_file, file_paths)
+        }
+    }
+
+    return file_paths
+}
+
+for(let root_file of root_files) {
+    var file_paths = get_file_path(root_file)  
+    console.log(file_paths)
+}
 
 
 // ---- Display file structure ----
