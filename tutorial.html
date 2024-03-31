@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="fileperms_style.css" />
+    <title>Windows File System Permissions Overview</title>
+
+</head>
+<body>
+    <h2>Access Control List (ACL):</h2>
+    <p>Each file or folder has an ACL, which is a list of Access Control Entries (ACEs). Each ACE consists of:
+        <li>The user or group (trustee) being given or denied permission</li>
+        <li>The specific permission being allowed or denied (e.g. delete, write, etc.)</li>
+        <li>Whether the ACE is "allowing" or "denying" the permission</li>
+    </p>
+   
+    <h2>Inheritance</h2>
+    <p>Files and folders can inherit permissions from their parent folders. This inheritance can be turned off for specific files/folders.</p>
+
+    <h2>Overrides:</h2>
+        <li>The owner of a file/folder can always change permissions.</li>
+        <li>The administrator group can always change permissions and take ownership.</li>
+
+     <h2>Resolving Permissions:</h2>
+        <li>When a user tries to access a file, Windows looks at all direct permissions for that user or their groups.</li>
+        <li>If any "deny" permissions are found, access is denied.</li>
+        <li>If no "deny" permissions are found, but there are "allow" permissions, access is granted.</li>
+        <li>If no explicit permissions are found, and inheritance is enabled, Windows looks at the parent folder's permissions.</li>
+        <li>If no relevant permissions are found after checking inheritance, access is denied.</li>
+
+    <h2>Key Principles:</h2>
+        <li>Direct permissions take precedence over inherited permissions.</li>
+        <li>Permissions closer to the file take precedence over those further away.</li>
+        <li>"Deny" permissions override "allow" permissions at the same level.</li>
+        <li>User and group permissions have the same priority.</li>
+   
+    </body>
+</html>
