@@ -23,6 +23,19 @@
 //     blank_dialog.text(explanation)
 // })
 
+var permission_dialog = define_new_dialog('permission-help', 'Permissions Help')
+$('.perm_info').click(function(){
+    blank_dialog.dialog('open')
+    // console.log($('#permission_panel').attr('filepath'))
+    // console.log($('#permission_panel').attr('username'))
+    // console.log($($(this)).attr('permission_name'))
+    filepath_obj = path_to_file[$('#permission_panel').attr('filepath')]
+    user_obj = all_users[$('#permission_panel').attr('username')]
+
+    //var explanation = get_explanation_text(allow_user_action(filepath_obj, user_obj, $(this).attr('permission_name')))
+    permission_dialog.text("Hello")
+})
+
 function get_file_path(file_obj, file_paths = []) {
     var file_path = get_full_path(file_obj)
     file_paths.push( file_path )  
