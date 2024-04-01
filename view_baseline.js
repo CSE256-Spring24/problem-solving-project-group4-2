@@ -10,14 +10,21 @@ perm_dialog = define_new_dialog(
   (title = "Permissions"),
   (options = {
     // The following are standard jquery-ui options. See https://jqueryui.com/dialog/
-    height: 500,
-    width: 400,
+    height: 450,
+    width: 600,
     open: function () {
       grouped_permissions.hide();
     },
     buttons: {
+      Help: {
+        text: "Need Help?",
+        id: "perm-dialog-help-button",
+        click: function () {
+          window.location.href = "tutorial.html";
+        },
+      },
       OK: {
-        text: "SAVE",
+        text: "Save and Close",
         id: "perm-dialog-ok-button",
         click: function () {
           $(this).dialog("close");

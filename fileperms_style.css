@@ -1,38 +1,117 @@
 .file {
-    padding: 8;
-    border-bottom: 1px solid #dddddd;
+  padding: 8;
+  border-bottom: 1px solid #dddddd;
 }
 
 .section {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
-.ui-selected { 
-    background: #007fff; 
-    color: white; 
+.ui-selected {
+  background: #007fff;
+  color: white;
 }
 
 .footer {
-    position: fixed;
-    bottom: 0;
-    right: 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
-
 #mturk-top-banner-drop-down-content {
-    position: absolute;
-    width: 99%;
-    bottom: 0px;
-    top:unset;
-    left: 0;
-    background-color: #eee;
-    z-index: 100;
-    padding: 10px 10px 10px 10px;
-    border-left: 1px orange solid;
-    border-right: 1px orange solid;
-    border-top: 1px orange solid;
+  position: absolute;
+  width: 99%;
+  bottom: 0px;
+  top: unset;
+  left: 0;
+  background-color: #eee;
+  z-index: 100;
+  padding: 10px 10px 10px 10px;
+  border-left: 1px orange solid;
+  border-right: 1px orange solid;
+  border-top: 1px orange solid;
 }
 
 .no-close .ui-dialog-titlebar-close {
-    display: none;
+  display: none;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+  display: flex;
+  justify-content: center;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+#perm-dialog-help-button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #000000;
+  background: transparent;
+  line-height: 1.15;
+  font-weight: 500;
+  border-radius: 50px;
+  top: 5px;
+  right: 10px;
+  padding: 0 15px;
+  word-spacing: 0px;
+  letter-spacing: 0.0892857143em;
+  min-width: 64px;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 36px;
+  border: 1px dashed#646464;
+  text-align: center;
+}
+
+#perm-dialog-ok-button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 3px;
+  padding: 0 16px;
+  border-radius: 4px;
+  color: #fff;
+  background: #0da100;
+  line-height: 1.15;
+  font-size: 14px;
+  height: 36px;
+  word-spacing: 0px;
+  letter-spacing: 0.0892857143em;
+  text-decoration: none;
+  text-transform: uppercase;
+  min-width: 64px;
+  border: none;
+  text-align: center;
+}
+
+#perm-dialog-advanced-button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 3px;
+  padding: 0 15px;
+  border-radius: 4px;
+  color: #1d4eff;
+  background: transparent;
+  line-height: 1.15;
+  font-size: 14px;
+  height: 36px;
+  word-spacing: 0px;
+  letter-spacing: 0.0892857143em;
+  text-decoration: none;
+  text-transform: uppercase;
+  min-width: 64px;
+  border: 1px solid #1d4eff;
+  text-align: center;
 }
