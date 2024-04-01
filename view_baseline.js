@@ -193,7 +193,7 @@ perm_remove_user_button.click(function () {
 perm_dialog.append(obj_name_div);
 perm_dialog.append(
   $(
-    '<div id="permissions_user_title"><b>Select User/Group To Modify Permissions For:<b></div>'
+    '<div id="permissions_user_title"><b>Select User/Group To Modify Permissions For:<b></div><br/>'
   )
 );
 perm_dialog.append(file_permission_users);
