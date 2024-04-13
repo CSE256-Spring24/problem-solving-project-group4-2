@@ -75,7 +75,8 @@ file_permission_users = define_single_select_list(
 );
 
 file_permission_users.css({
-  height: "80px",
+  height: "125px",
+  margin: "15px",
 });
 
 // Make button to add a new user to the list:
@@ -201,6 +202,11 @@ perm_dialog.append(obj_name_div);
 perm_dialog.append(
   $(
     '<div id="permissions_user_title"><b>Select User/Group To Modify Permissions For:<b></div><br/>'
+  )
+);
+perm_dialog.append(
+  $(
+    '<div id="permissions_user_select"><b>In order to modify permissions, please select a user below<b></div><br/>'
   )
 );
 perm_dialog.append(file_permission_users);
@@ -605,6 +611,7 @@ let user_select_contents = $("#user_select_dialog").dialog({
         $(`#${to_populate_id}`).text(selected_value);
         $(`#${to_populate_id}`).attr("selected_user", selected_value);
         $(this).dialog("close");
+        alert('If you added a new user, please select them in order to modify any permissions.')
       },
     },
   },
