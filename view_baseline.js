@@ -75,8 +75,8 @@ file_permission_users = define_single_select_list(
 );
 
 file_permission_users.css({
-  height: "125px",
-  margin: "15px",
+  height: "100px",
+  margin: "10px",
 });
 
 // Make button to add a new user to the list:
