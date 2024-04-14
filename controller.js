@@ -383,14 +383,17 @@ function toggle_permission(filepath, username, permission, type, is_on) {
         remove_permissions(file_obj, user, [permission], is_allow_ace);
     }
 }
-
+//Cashe the current set of permissions. When an edit panel is opened.
+//When closed, listen for the close. If closed, check how the current differ from open.
+//Ask if the user wants to keep or revert these changes.
+//Check model.js, underlying permissions model.
 function validate_and_get_logs() {
     let scenario = $('#scenario_context').data('tag');
     let scenario_solution_state = new Set(
         correct_scenario_solutions[scenario].split(';')
     );
     let current_state = new Set(get_allowed_actions_string().split(';'));
-
+//* Important ^^^
     let missing_allowed = [];
     for (let correct_allowed of scenario_solution_state) {
         if (!current_state.has(correct_allowed)) {

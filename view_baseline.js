@@ -440,6 +440,13 @@ let adv_contents = $(`#advdialog`).dialog({
         $(this).dialog("close");
       },
     },
+    Help: {
+      text: "Need Help?",
+      id: "perm-dialog-help-button",
+      click: function () {
+        window.location.href = "tutorial.html";
+      },
+    },
   },
 });
 // generate ID for each HTML element making up the dialog:
