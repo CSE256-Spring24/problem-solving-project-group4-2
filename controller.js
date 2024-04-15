@@ -383,7 +383,7 @@ function toggle_permission(filepath, username, permission, type, is_on) {
         remove_permissions(file_obj, user, [permission], is_allow_ace);
     }
 }
-//Cashe the current set of permissions. When an edit panel is opened.
+//Cashe the current set of permissions. When an edit panel is opened. - MORGAN FIX
 //When closed, listen for the close. If closed, check how the current differ from open.
 //Ask if the user wants to keep or revert these changes.
 //Check model.js, underlying permissions model.
