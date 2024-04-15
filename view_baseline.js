@@ -49,7 +49,7 @@ obj_name_div = $(
 
 //Make the div with the explanation about special permissions/advanced settings:
 advanced_expl_div = $(
-  '<div id="permdialog_advanced_explantion_text">For special permissions or advanced settings, click Advanced.</div>'
+  '<div id="permdialog_advanced_explantion_text">For special permissions or advanced settings, click Advanced.<br><br>Inherited permissions are greyed out, edit parent object or disable inheritance to edit these.</div>'
 );
 
 // Make the (grouped) permission checkboxes table:
@@ -390,9 +390,8 @@ function update_effective_user() {
         $(document.getElementById(`adv_effective_checkcell_${p}`)).append(
           `<span id="adv_effective_checkbox_${p}" class="oi oi-circle-check"/>`
         );
-      }
-      else {
-         $(document.getElementById(`adv_effective_checkcell_${p}`)).append(
+      } else {
+        $(document.getElementById(`adv_effective_checkcell_${p}`)).append(
           `<span id="adv_effective_checkbox_${p}" class="oi oi-circle-x"/>`
         );
       }
@@ -623,7 +622,9 @@ let user_select_contents = $("#user_select_dialog").dialog({
         $(`#${to_populate_id}`).text(selected_value);
         $(`#${to_populate_id}`).attr("selected_user", selected_value);
         $(this).dialog("close");
-        alert('If you added a new user, please select them in order to modify any permissions.')
+        alert(
+          "If you added a new user, please select them in order to modify any permissions."
+        );
       },
     },
   },
@@ -856,4 +857,25 @@ $(`<div id="survey-dialog" title="Survey">
 $("#survey-form").submit(function () {
   $("#survey-dialog").dialog("close");
   event.preventDefault();
+});
+
+$(document).ready(function () {
+  $(".groupcheckbox").tooltip({
+    items: ".groupcheckbox:disabled",
+    content: "Permissions are inherited",
+    position: { my: "left+15 center", at: "right center" },
+    create: function (event, ui) {
+      if (!$(this).is(":disabled")) {
+        $(this).tooltip("disable");
+      }
+    },
+  });
+
+  $(".groupcheckbox").on("change", function () {
+    if ($(this).is(":disabled")) {
+      $(this).tooltip("enable");
+    } else {
+      $(this).tooltip("disable");
+    }
+  });
 });
