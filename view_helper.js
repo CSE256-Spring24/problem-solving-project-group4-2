@@ -219,15 +219,23 @@ function define_new_effective_permissions(
       for (let p of which_permissions) {
         let p_id = p.replace(/[ \/]/g, "_"); //get jquery-readable id
         // if the actual model would allow an action with permission
-        if (allow_user_action(path_to_file[filepath], all_users[username], p)) {
-          // This action is allowed. Find the checkbox cell and put a checkbox there.
+        
+          
           let this_checkcell = effective_container.find(
             `#${id_prefix}_checkcell_${p_id}`
           );
+          if (allow_user_action(path_to_file[filepath], all_users[username], p)) {
+            // This action is allowed. Find the checkbox cell and put a checkbox there.
           this_checkcell.append(
-            `<span id="${id_prefix}_checkbox_${p_id}" class="oi oi-check"/>`
+            `<span id="${id_prefix}_checkbox_${p_id}" class="oi oi-circle-check"/>`
           );
         }
+        else {
+           this_checkcell.append(
+            `<span id="${id_prefix}_checkbox_${p_id}" class="oi oi-circle-x"/>`
+          );
+        }
+        
       }
     }
   };

@@ -388,7 +388,12 @@ function update_effective_user() {
       if (allow_user_action(file, selected_user, p)) {
         // find the checkbox cell and put a checkbox there.
         $(document.getElementById(`adv_effective_checkcell_${p}`)).append(
-          `<span id="adv_effective_checkbox_${p}" class="oi oi-check"/>`
+          `<span id="adv_effective_checkbox_${p}" class="oi oi-circle-check"/>`
+        );
+      }
+      else {
+         $(document.getElementById(`adv_effective_checkcell_${p}`)).append(
+          `<span id="adv_effective_checkbox_${p}" class="oi oi-circle-x"/>`
         );
       }
     }
