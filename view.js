@@ -23,6 +23,12 @@
 //     blank_dialog.text(explanation)
 // })
 
+$(document).ready(function() {
+    var popup = "<ul><li>Editing permissions for a folder changes the permissions for everything in that folder</li><li>If Permissions for a user are greyed out, click deny to override the permission or try changing permissions for the parent folder</li><li><b>Close this box and click the orange arrow in the bottom right of the screen to see your task!</b></li></ul>";
+    let popup_dialog = define_new_dialog('popup_dialog', 'Before You Start!');
+    popup_dialog.append(popup).dialog('open')
+})
+
 var permission_dialog = define_new_dialog('permission-help', 'Permissions Help')
 $('.perm_info').click(function(){
     blank_dialog.dialog('open')
