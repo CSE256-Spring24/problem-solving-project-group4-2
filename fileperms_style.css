@@ -1,6 +1,8 @@
 .file {
   padding: 8;
   border-bottom: 1px solid #dddddd;
+  padding-bottom: 0.4em;
+  padding-top: 0.4em;
 }
 
 .section {
