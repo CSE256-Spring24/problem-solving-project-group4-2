@@ -201,12 +201,17 @@ perm_remove_user_button.click(function () {
 perm_dialog.append(obj_name_div);
 perm_dialog.append(
   $(
-    '<div id="permissions_user_title"><b>Select User/Group To Modify Permissions For:<b></div><br/>'
+    '<div id="permissions_user_select"><b>In order to modify permissions, please select a user below<b></div><br/>'
   )
 );
 perm_dialog.append(
   $(
-    '<div id="permissions_user_select"><b>In order to modify permissions, please select a user below<b></div><br/>'
+    '<div id="permissions_user_select"><b>In order to add a user, select "Add User/Group", then select the user<b></div><br/>'
+  )
+);
+perm_dialog.append(
+  $(
+    '<div id="permissions_user_select"><b>TIP: View permissions of other employee, and select the same boxes for new employee to copy their permissions<b></div><br/>'
   )
 );
 perm_dialog.append(file_permission_users);
