@@ -19,6 +19,7 @@ perm_dialog = define_new_dialog(
       Help: {
         text: "Need Help?",
         id: "perm-dialog-help-button",
+        title: "Provides file systems basics with a simple tutorial",
         click: function () {
           window.location.href = "tutorial.html";
         },
@@ -33,6 +34,7 @@ perm_dialog = define_new_dialog(
       Advanced: {
         text: "Advanced Permissions",
         id: "perm-dialog-advanced-button",
+        title: "Explore and customize advanced security features that are not required for most regular tasks",
         click: function () {
           open_advanced_dialog(perm_dialog.attr("filepath"));
         },
@@ -452,6 +454,7 @@ let adv_contents = $(`#advdialog`).dialog({
     Help: {
       text: "Need Help?",
       id: "perm-dialog-help-button",
+      title: "Provides file systems basics with a simple tutorial",
       click: function () {
         window.location.href = "tutorial.html";
       },
