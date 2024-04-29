@@ -80,10 +80,10 @@
   cursor: pointer;
   font-weight: 500;
   border-radius: 3px;
-  padding: 0 16px;
+  padding: 5 15px;
   border-radius: 4px;
-  color: #fff;
-  background: #0da100;
+  color: #007e1d;
+  background: transparent;
   line-height: 1.15;
   font-size: 14px;
   height: 36px;
@@ -92,8 +92,13 @@
   text-decoration: none;
   text-transform: uppercase;
   min-width: 64px;
-  border: none;
+  border: 1px solid #007e1d;
   text-align: center;
+}
+
+#perm-dialog-ok-button:hover {
+  color: white;
+  background: #007e1d;
 }
 
 #perm-dialog-advanced-button {
@@ -102,7 +107,7 @@
   cursor: pointer;
   font-weight: 500;
   border-radius: 3px;
-  padding: 0 15px;
+  padding: 5 15px;
   border-radius: 4px;
   color: #1d4eff;
   background: transparent;
@@ -118,6 +123,67 @@
   text-align: center;
 }
 
-.permbutton {
-  margin-left: 1em;  
+#perm-dialog-advanced-button:hover {
+  color: white;
+  background: #1d4eff;
 }
+
+.ui-button {
+  background-color: #ffffff;
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.15;
+  overflow: visible;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: all 80ms ease-in-out;
+  user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+}
+
+.ui-button:hover {
+  background-color: #f5c000;
+  border-color: #000000;
+}
+
+#perm-dialog-advanced-button:hover {
+  color: white;
+  background: #1d4eff;
+}
+
+.ui-button {
+  background-color: #ffffff;
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.15;
+  overflow: visible;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: all 80ms ease-in-out;
+  user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+}
+
+.ui-button:hover {
+  background-color: #f5c000;
+  border-color: #000000;
+}
+
+.permbutton {
+  margin-left: 1em;
+}
+
